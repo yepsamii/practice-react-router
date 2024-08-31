@@ -10,6 +10,8 @@ import {
 } from "react-router-dom";
 import { createContact, getContacts } from "../contacts";
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "../LanguageSwitcher";
 
 export async function loader({ request }) {
   const url = new URL(request.url);
@@ -26,6 +28,8 @@ export async function action() {
 export default function Root() {
   const { contacts, q } = useLoaderData();
 
+  const { t } = useTranslation();
+
   const navigation = useNavigation();
   const submit = useSubmit();
 
@@ -36,11 +40,15 @@ export default function Root() {
   useEffect(() => {
     document.getElementById("q").value = q;
   }, [q]);
-
+  const welcome = "welcome";
   return (
     <>
       <div id="sidebar">
         <h1>React Router Contacts</h1>
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <h3>{t(welcome)}</h3>
+          <LanguageSwitcher />
+        </div>
         <div>
           <Form
             id="search-form"
