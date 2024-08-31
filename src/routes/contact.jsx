@@ -1,5 +1,6 @@
 import { Form, useFetcher, useLoaderData } from "react-router-dom";
 import { getContact, updateContact } from "../contacts";
+import { useTranslation } from "react-i18next";
 
 export async function action({ request, params }) {
   const formData = await request.formData();
@@ -21,7 +22,10 @@ export async function loader({ params }) {
 
 export default function Contact() {
   const { contact } = useLoaderData();
+  const {t} = useTranslation();
 
+  const Edit = "edit";
+  const Delete = "delete";
   return (
     <div id="contact">
       <div>
@@ -61,7 +65,7 @@ export default function Contact() {
 
         <div>
           <Form action="edit">
-            <button type="submit">Edit</button>
+            <button type="submit">{t(Edit)}</button>
           </Form>
           <Form
             method="post"
@@ -72,7 +76,7 @@ export default function Contact() {
               }
             }}
           >
-            <button type="submit">Delete</button>
+            <button type="submit">{t(Delete)}</button>
           </Form>
         </div>
       </div>

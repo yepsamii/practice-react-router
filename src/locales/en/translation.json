@@ -6,5 +6,6 @@
   "demo-router": "This is a demo for React Router.",
   "search": "Search",
   "new": "New",
-  "edit": "Edit"
+  "edit": "Edit",
+  "delete": "Delete"
 }
