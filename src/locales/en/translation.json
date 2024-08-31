@@ -1,5 +1,10 @@
 {
-    "welcome": "Welcome",
-    "language": "Language"
-  }
-  
+  "welcome": "Welcome",
+  "language": "Language",
+  "check-out": "Check out",
+  "docs-at": "the docs at",
+  "demo-router": "This is a demo for React Router.",
+  "search": "Search",
+  "new": "New",
+  "edit": "Edit"
+}

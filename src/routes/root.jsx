@@ -41,6 +41,8 @@ export default function Root() {
     document.getElementById("q").value = q;
   }, [q]);
   const welcome = "welcome";
+  const search = "search";
+  const New = "new";
   return (
     <>
       <div id="sidebar">
@@ -58,7 +60,7 @@ export default function Root() {
               id="q"
               className={searching ? "loading" : ""}
               aria-label="Search contacts"
-              placeholder="Search"
+              placeholder={t(search)}
               type="search"
               name="q"
               defaultValue={q}
@@ -80,7 +82,7 @@ export default function Root() {
             ></div>
           </Form>
           <Form method="post">
-            <button type="submit">New</button>
+            <button type="submit">{t(New)}</button>
           </Form>
         </div>
         <nav>
